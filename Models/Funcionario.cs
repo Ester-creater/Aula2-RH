@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Aula02RH.Models.Enuns;
 
+
+//Comentário 13/08/2025
+
 namespace Aula02RH.Models
 {
     public class Funcionario
