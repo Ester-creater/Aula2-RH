@@ -11,12 +11,12 @@ namespace Aula02RH.Models
 {
     public class Funcionario
     {
-        public int id{ get; set; }
-        public string Nome  { get; set; }
-        public string cpf { get; set; }
+        public int Id{ get; set; }
+        public string Nome { get; set; }
+        public string Cpf { get; set; }
         public DateTime DataAdmissao  { get; set; }
         public decimal Salario  { get; set; }
-        public TipoFuncionario TipoFuncionario { get; set; }
+        public TipoFuncionarioEnum TipoFuncionario { get; set; }
 
 
         public void ReajustarSalario()
@@ -26,7 +26,9 @@ namespace Aula02RH.Models
 
         public string ExibirperiodoExperiencia()
         {
-            string periodoExperiencia =string.Format ("Periodo de Experiencia {0} até {1}", DataAdmissao, DataAdmissao.AddMonths(3));
+            string periodoExperiencia 
+            = string.Format ("Periodo de Experiencia {0} até {1}", DataAdmissao, DataAdmissao.AddMonths(3));
+
             return periodoExperiencia;
         }
         
@@ -35,5 +37,24 @@ namespace Aula02RH.Models
             decimal desconto = this.Salario * percentual/100;
             return desconto;
         }
+
+        private int ContarCaracteres(string dado)
+        {
+            return dado.Length;
+        }
+
+        public bool ValiarCpf()
+        {
+            if(ContarCaracteres(Cpf) == 11)
+                return true;
+            else
+                return false;
+
+        }
+
+
+
+
+        
     }
 }
